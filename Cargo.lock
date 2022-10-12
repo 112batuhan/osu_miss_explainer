@@ -975,6 +975,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "futures-util",
+ "parking_lot 0.12.1",
  "reqwest",
  "serde",
  "serde_json",
