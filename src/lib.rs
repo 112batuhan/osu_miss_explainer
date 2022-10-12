@@ -31,6 +31,10 @@ impl Context {
     pub fn is_same_miss(&self, current_miss: u32) -> bool {
         *self.last_miss.lock() == current_miss
     }
+    
+    pub fn update_last_miss(&self, current_miss: u32) {
+        *self.last_miss.lock() = current_miss
+    }
 
     pub async fn read_wiki_page(&self) {
         *self.state.lock() = ReadState::Reading;

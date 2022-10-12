@@ -38,6 +38,7 @@ async fn handle_message(
     let current_miss = gosu_data.unwrap_misses();
 
     if current_miss != 0 && !ctx.is_same_miss(current_miss) && ctx.is_idle() {
+        ctx.update_last_miss(current_miss);
         ctx.read_wiki_page().await;
     }
 
